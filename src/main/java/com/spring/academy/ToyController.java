@@ -1,9 +1,9 @@
 package com.spring.academy;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.UriBuilder;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
@@ -19,9 +19,17 @@ public class ToyController {
     }
 
     @GetMapping
-    public ResponseEntity<Iterable<Toy>> list()  {
+    public ResponseEntity<Iterable<Toy>> list(Pageable pageable)  {
         return ResponseEntity.ok(
-            this.repository.findAll()
+            this.repository.findAll(
+                    PageRequest.of(
+                            pageable.getPageNumber(),
+                            pageable.getPageSize(),
+                            pageable.getSortOr(
+                                    pageable.getSort()
+                            )
+                    )
+            )
         );
     }
 
