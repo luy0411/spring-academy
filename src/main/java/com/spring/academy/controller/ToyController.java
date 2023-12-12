@@ -1,5 +1,7 @@
-package com.spring.academy;
+package com.spring.academy.controller;
 
+import com.spring.academy.domain.Toy;
+import com.spring.academy.repository.ToyRepository;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.spring.academy;
+package com.spring.academy.domain;
 
 import jakarta.persistence.*;
 
