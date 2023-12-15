@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class AcademyApplicationTests {
+class ToyTests {
 
 	@Autowired
 	private MockMvc mockMvc;

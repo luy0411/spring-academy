@@ -17,6 +17,10 @@ public class Toy {
     @Column
     Double price;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    User owner;
+
     public Toy() {
 
     }
@@ -49,5 +53,13 @@ public class Toy {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 }
