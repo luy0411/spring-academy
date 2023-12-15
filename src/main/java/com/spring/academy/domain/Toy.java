@@ -3,11 +3,12 @@ package com.spring.academy.domain;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="toy")
+@Table(name="tb_toy")
 public class Toy {
 
     @Id
     @GeneratedValue
+    @Column(name = "toy_id")
     Long id;
 
     @Column
